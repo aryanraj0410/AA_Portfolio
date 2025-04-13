@@ -2,6 +2,93 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 /* ----- VARIABLES ----- */
+/* Tablets (768px and below) */
+@media only screen and (max-width: 768px) {
+    .row {
+      flex-direction: column;
+    }
+  
+    .col, .featured-text, .featured-image {
+      width: 100%;
+    }
+  
+    .image, .image img {
+      width: 280px;
+      height: 280px;
+    }
+  
+    .featured-name {
+      font-size: 36px;
+    }
+  
+    .video-banner {
+      width: 95vw;
+      height: 300px;
+      padding-top: 20%;
+    }
+  }
+  
+  /* Mobile Phones (480px and below) */
+  @media only screen and (max-width: 480px) {
+    nav {
+      padding-inline: 5vw;
+    }
+  
+    .nav-name {
+      font-size: 22px;
+    }
+  
+    .featured-name {
+      font-size: 28px;
+    }
+  
+    .featured-text-info {
+      font-size: 14px;
+    }
+  
+    .btn {
+      padding: 10px 15px;
+      font-size: 14px;
+    }
+  
+    .scroll-btn {
+      width: 120px;
+      height: 45px;
+      font-size: 14px;
+    }
+  
+    .image, .image img {
+      width: 220px;
+      height: 220px;
+    }
+  
+    .video-banner {
+      height: 200px;
+    }
+  
+    .loading-text {
+      font-size: 16px;
+    }
+  
+    .top-header h1 {
+      font-size: 22px;
+    }
+  
+    footer .top-footer p {
+      font-size: 20px;
+    }
+  
+    .footer_menu_list a {
+      margin-inline: 10px;
+      font-size: 14px;
+    }
+  }
+
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  
 
 /* Loading Screen */
 #loading-screen {
@@ -202,12 +289,13 @@ nav{
     font-size: 28px;
     cursor: pointer;
 }
-.active-link{
+.active-link {
     position: relative;
-    color: var(--first-color);
-    transition: .3;
-}
-.active-link::after{
+    color: var(--first-color) !important;
+    transition: 0.3s;
+  }
+  
+  .active-link::after {
     content: '';
     position: absolute;
     left: 50%;
@@ -217,7 +305,7 @@ nav{
     height: 5px;
     background: var(--first-color);
     border-radius: 50%;
-}
+  }
 
 
 /* ----- WRAPPER DESIGN ----- */
@@ -827,3 +915,5 @@ footer{
         gap: 20px;
     }
 }
+
+

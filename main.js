@@ -82,23 +82,36 @@ function myMenuFunction(){
   srRight.reveal('.form-control',{delay: 100})
   
   /* ----- CHANGE ACTIVE LINK ----- */
-  const sections = document.querySelectorAll('section[id]')
-  
-  function scrollActive() {
-    const scrollY = window.scrollY;
-  
-    sections.forEach(current =>{
-      const sectionHeight = current.offsetHeight,
-            sectionTop = current.offsetTop - 50,
-            sectionId = current.getAttribute('id')
-  
-      if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) { 
-        document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.add('active-link')
-      } else {
-        document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.remove('active-link')
-      }
-    })
-  }
+    const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+
+function scrollActive() {
+  const scrollY = window.scrollY;
+
+  sections.forEach(current => {
+    const sectionHeight = current.offsetHeight;
+    const sectionTop = current.offsetTop - 50;
+    const sectionId = current.getAttribute('id');
+
+    const link = document.querySelector('.nav-link[href*=' + sectionId + ']');
+    
+    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      navLinks.forEach(l => l.classList.remove('active-link'));
+      link.classList.add('active-link');
+    }
+  });
+}
+
+window.addEventListener('scroll', scrollActive);
+
+// Optional: update active link on click too
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.forEach(l => l.classList.remove('active-link'));
+    link.classList.add('active-link');
+  });
+});
+
   
   // Show the loading screen until the page is fully loaded
   window.addEventListener('load', function () {
