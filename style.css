@@ -3,7 +3,7 @@
 
 /* ----- VARIABLES ----- */
 /* Tablets (768px and below) */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 100px) {
     .row {
       flex-direction: column;
     }
@@ -257,7 +257,7 @@ nav{
    position: relative;
 }
 .nav-name{
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 600;
     color: var(--text-color-third);
 }
@@ -307,6 +307,40 @@ nav{
     border-radius: 50%;
   }
 
+
+  @media screen and (max-width: 1000px) {
+    .nav-menu {
+      position: absolute;
+      top: 90px;
+      left: 0;
+      width: 100%;
+      flex-direction: column;
+      background: var(--body-color);
+      padding: 20px 0;
+      display: none;
+    }
+  
+    .nav-menu.active {
+      display: flex;
+    }
+  
+    .nav_list {
+      margin: 10px 0;
+      text-align: center;
+    }
+  
+    .nav-menu-btn {
+      display: block;
+    }
+  
+    .nav-link {
+      margin: 0;
+      padding: 10px 0;
+      line-height: 1;
+    }
+  }
+
+  
 
 /* ----- WRAPPER DESIGN ----- */
 .wrapper{
@@ -706,7 +740,7 @@ footer{
 }
 
 /* ----- MEDIA QUERY == 900px / RESPONSIVE ----- */
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1000px) {
     .nav-button{
         display: none;
     }
@@ -915,45 +949,3 @@ footer{
         gap: 20px;
     }
 }
-
-
-.container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.card-container {
-  display: flex;
-  gap: 20px;
-}
-
-.card {
-  background-color: white;
-  padding: 20px;
-  width: 250px;
-  height: 200px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  text-align: center;
-}
-
-.nav-button {
-  padding: 10px 15px;
-  border: none;
-  background-color: #4CAF50;
-  color: white;
-  font-size: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.nav-button:disabled {
-  background-color: #aaa;
-  cursor: not-allowed;
-}
-
